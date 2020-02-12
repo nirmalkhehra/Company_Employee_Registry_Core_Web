@@ -1,0 +1,42 @@
+﻿@page
+@model Company_Employee_Registry_Core_Web.Pages.CompanyOwners.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Owners</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Add New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyOwner[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyOwner[0].ContactEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CompanyOwner) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactEmail)
+            </td>
+            <td>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a class="btn btn-primary" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

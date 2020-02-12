@@ -1,0 +1,31 @@
+﻿@page
+@model Company_Employee_Registry_Core_Web.Pages.CompnayEmployeeRegistrations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CompanyEmployeeRegistration</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyEmployeeRegistration.Employee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CompanyEmployeeRegistration.Employee.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyEmployeeRegistration.Company)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CompanyEmployeeRegistration.Company.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CompanyEmployeeRegistration.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
